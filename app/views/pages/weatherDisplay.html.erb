@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<h1>Weather Results</h1>
+<p><strong>Address: </strong><%= @address %></p>
+<p><strong>Weather Description: </strong><%= @weather['weather'][0]['description'] %></p>
+<p><strong>Sunrise: </strong><%= @sunrise.hour.to_s+":"+(sprintf '%02d', @sunrise.min.to_s) %></p>
+<p><strong>Sunset: </strong><%= @sunset.hour.to_s+":"+(sprintf '%02d', @sunset.min.to_s) %></p>
+<p><strong>Temp(F): </strong><%= @weather['main']['temp'].to_s %></p>
+<p><strong>Wind(MPH): </strong><%= @weather['wind']['speed'].to_s+" "+@windDir %></p>
+
+<a class="btn btn-default" href="/" role="button">Back to Home</a>

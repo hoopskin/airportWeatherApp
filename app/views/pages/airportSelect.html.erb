@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<h1>Multiple airports found! Please select one</h1>
+
+<%= form_tag("/pages/airportCheckInput", method: "get") do %>
+	<% @results.each do |result| %>
+		<%= submit_tag(@results.index(result).to_s+") "+result.address) %> <br />
+	<% end %>
+<% end %>

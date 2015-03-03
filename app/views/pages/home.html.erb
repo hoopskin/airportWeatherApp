@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<h1>Home</h1>
+<p>Please enter either a city OR a city and state</p> <br />
+<% if flash[:error] %>
+  <div class="alert alert-warning">
+      <strong>Error!</strong> <%= flash[:error] %>
+  </div>
+<% end %>
+<%= form_tag("/pages/checkInput", method: "get") do %>
+  <%= label_tag(:city, "City:") %>
+  <%= text_field_tag(:city) %> 
+  <br />
+  <br />
+  <br />
+  <strong>OR</strong>
+  <br />
+  <br />
+  <br />
+  <%= label_tag(:city1, "City:") %>
+  <%= text_field_tag(:city1) %> <strong>AND</strong> 
+  <%= label_tag(:state, "State:") %>
+  <%= text_field_tag(:state) %>
+  <br />
+  <br />
+  <%= submit_tag("Submit") %>
+<% end %>
